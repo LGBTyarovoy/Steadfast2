@@ -80,9 +80,13 @@ abstract class Packet{
 			$port = $this->getShort(false);
 		}else{
 			//TODO: IPv6
-		}
+		}elseif{
+			throw new \UnexpectedValueException("Unknown IP address version $version");
+			
 	}
+} 
 
+	    
     protected function feof(){
         return !isset($this->buffer{$this->offset});
     }
